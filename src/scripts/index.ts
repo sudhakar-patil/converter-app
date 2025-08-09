@@ -2,7 +2,7 @@ import '../style.css'
 import typescriptLogo from '../assets/typescript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from '../scripts/counter'
-
+//const { BASE_URL } = import.meta.env;
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
     <a href="https://vite.dev" target="_blank">
