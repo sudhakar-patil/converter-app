@@ -1,24 +1,18 @@
 import '../style.css'
-import typescriptLogo from '../assets/typescript.svg'
-import viteLogo from '/vite.svg'
 import { setupCounter } from '../scripts/counter'
+import { ConverterFactory } from "./core/converter.factory";
 //const { BASE_URL } = import.meta.env;
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
+  <div>    
+    <p class="read-the-docs" id="p1">      
     </p>
   </div>
 `
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+//setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+
+
+const lengthConverter = ConverterFactory.getConverter("length");
+const kmToMiles = lengthConverter.convert(10, "km", "mi");
+
+document.getElementById("p1")!.innerHTML = `10 kilometers is equal to ${kmToMiles.toFixed(2)} miles.`;
