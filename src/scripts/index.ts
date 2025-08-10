@@ -1,5 +1,4 @@
 import '../style.css'
-import { setupCounter } from '../scripts/counter'
 import { ConverterFactory } from "./core/converter.factory";
 //const { BASE_URL } = import.meta.env;
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
